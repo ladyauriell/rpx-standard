@@ -2743,7 +2743,6 @@ const EMBEDDED_RPT = [
 		sp:`PAQ 1.2.2 Membunyikan huruf hijaiyah dengan bimbingan`},
 
 
-	
 
 
   {age:'5',subject:'Pendidikan Jasmani dan Kesihatan',fasa:'FASA 1',bulan:'JAN – MAC',
@@ -7386,9 +7385,7 @@ function initAutoSave() {
 //   3. Add one line to BUYERS below
 //   4. Push to GitHub → Vercel auto-deploys
 const BUYERS = {
-  'xFakf5da': { nick: atob('UmFmaQ=='), fullname: atob('SGF5YXR1bCBSYWZp') },
-  'QWzNEWXZ': { nick: atob('VGFmZg=='), fullname: atob('VGFmZmF6YW5pIFR1cmF5dQ==') },
-  'znpc3vhJ': { nick: atob('RGlsYQ=='), fullname: atob('RmFkaWxhaCBSdXNkaWFuc2hhaA==') },
+  'X7mK9pQw': { nick: atob('RGlsYQ=='),         fullname: atob('RGlsYXJhIGJpbnRpIEFobWFk') },
   // Add more buyers here:
   // 'XXXXXXXX': { nick: atob('...'), fullname: atob('...') },
 };
@@ -7405,14 +7402,14 @@ const BUYERS = {
         <div style="background:#fff;border-radius:20px;padding:36px 32px;max-width:420px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.25)">
           <div style="font-size:48px;margin-bottom:16px">🔒</div>
           <div style="font-size:20px;font-weight:700;color:#002060;margin-bottom:10px">URL Tidak Sah</div>
-          <p style="font-size:13px;color:#555;line-height:1.8;margin-bottom:28px">Anda memerlukan URL yang betul untuk mengakses plan ini.<br>Sila semak URL yang diberikan kepada anda semasa pembelian.</p>
+          <p style="font-size:13px;color:#555;line-height:1.8;margin-bottom:28px">Anda memerlukan URL peribadi yang betul untuk mengakses versi ini.<br>Sila semak URL yang diberikan kepada anda semasa pembelian.</p>
           <div style="display:flex;flex-direction:column;gap:12px">
             <a href="https://rp-x.vercel.app" style="display:block;padding:13px;background:linear-gradient(135deg,#002060,#1a5fad);color:#fff;text-decoration:none;border-radius:12px;font-size:13px;font-weight:700;letter-spacing:0.3px">🌐 Cuba Versi Demo</a>
             <a href="https://wa.me/60146701157?text=Salam%2C%20saya%20ingin%20membeli%20RP-X%20Standard" target="_blank" style="display:block;padding:13px;background:linear-gradient(135deg,#1ebe6e,#25d366);color:#fff;text-decoration:none;border-radius:12px;font-size:13px;font-weight:700;letter-spacing:0.3px">💬 Hubungi Kami untuk Beli</a>
           </div>
           <div style="margin-top:24px;font-size:11px;color:#aaa">RP-X © 2026</div>
         </div>
-      </div>`;	
+      </div>`;
     return;
   }
 
@@ -7433,6 +7430,10 @@ const BUYERS = {
 document.addEventListener('DOMContentLoaded', () => {
   // Restore saved state immediately — never wait on image loading for this
   loadState();
+  // Always render SK/SP containers — on fresh/empty load loadState() returns
+  // early (no localStorage) so renderSkSpList() inside it never fires.
+  // Calling it here unconditionally ensures the textareas are always present.
+  renderSkSpList();
   rebuildRptFilterDropdowns();
 
   // Wait for web fonts (Plus Jakarta Sans) to load before any canvas drawing
