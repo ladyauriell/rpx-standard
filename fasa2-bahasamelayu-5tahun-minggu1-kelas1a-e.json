@@ -1,0 +1,66 @@
+{
+  "_version": 1,
+  "formValues": {
+    "tarikh": "",
+    "minggu": "",
+    "masa": "",
+    "kelas": "",
+    "hadir": "",
+    "jumlah": "",
+    "tema": "",
+    "matapelajaran": "Bahasa Melayu",
+    "fokus": "Abjad dan perkataan mudah",
+    "objektif": "1. Murid dapat mendengar dan menyebut abjad A–E.\n2. Murid dapat menyebut perkataan mudah bermula dengan A–E.\n3. Murid memberi respons dengan menunjukkan gambar yang sesuai.",
+    "setInduksi": "Guru mengajak murid menyanyikan lagu ABC beramai-ramai.",
+    "aktiviti": "Aktiviti 1: Sebut Abjad\n- Guru menunjukkan kad imbas A–E (Huruf besar dan kecil).\n- Murid menyebut bunyi abjad bersama-sama.\n\nAktiviti 2: Perkataan Mudah\n- Guru menyebut perkataan mudah (contoh: ayam, bola, cacing, daun, emak).\n- Murid menunjukkan huruf mula perkataan tersebut di papan putih.\n\nAktiviti 3: Padanan\n- Murid memadankan abjad dengan gambar perkataan mudah dalam lembaran kerja.\n\nPenutup:\n- Guru mengulang semula abjad A–E bersama murid.\n- Guru memberi pujian atas usaha murid.",
+    "weekPickerIdx": 8
+  },
+  "skList": "BM 1.3 Menguasai kemahiran mendengar dan bertutur",
+  "spList": "BM 1.3.1 Mendengar dan menyebut abjad\nBM 1.3.2 Menyebut dan memberi respons terhadap perkataan yang didengar",
+  "pilihanState": {
+    "akt-pak": [
+      "Pembentangan Hasil Sendiri",
+      "Deklamasi Sajak / Nyanyian"
+    ],
+    "pak21": [
+      "Berkumpulan",
+      "Kemahiran / Proses"
+    ],
+    "pak": [],
+    "emk": [
+      "Bahasa"
+    ],
+    "kbat": [
+      "Mengingati",
+      "Memahami"
+    ],
+    "penilaian": [
+      "Soal Jawab",
+      "Pemerhatian / lisan / soal jawab",
+      "Pembentangan",
+      "Lembaran kerja"
+    ],
+    "pnp": [],
+    "bbm": [
+      "Kad imbas",
+      "Gambar",
+      "Lembaran kerja"
+    ],
+    "nilai": [
+      "Keceriaan",
+      "Keyakinan diri",
+      "Fokus"
+    ]
+  },
+  "pilihanCustom": {
+    "akt-pak": "",
+    "pak21": "",
+    "pak": "",
+    "emk": "",
+    "kbat": "",
+    "penilaian": "",
+    "pnp": "",
+    "bbm": "",
+    "nilai": ""
+  }
+}
