@@ -1,0 +1,70 @@
+{
+"fasa": 2,
+"age": 5,
+"subject": "bi",
+"week": 1,
+"kelas": 1,
+"topic": "english",
+"url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/b1/fasa2-bahasamelayu-5tahun-minggu5-kelas1-vokal-babibu.json"
+
+  
+  "_version": 1,
+  "formValues": {
+    "tarikh": "",
+    "minggu": "",
+    "masa": "",
+    "kelas": "",
+    "hadir": "",
+    "jumlah": "",
+    "tema": "",
+    "matapelajaran": "Bahasa Melayu",
+    "fokus": "Suku Kata KV (ba, bi, bu)",
+    "objektif": "1. Menyebut bunyi suku kata ba, bi, bu.\n2. Mengenal bunyi a, i, u dalam suku kata.\n3. Meniru sebutan guru dengan betul.",
+    "setInduksi": "Guru menunjukkan dan menyebut huruf b.\nGuru menambah bunyi 'a' menjadi 'ba', 'i' menjadi 'bi', 'u' menjadi 'bu'.\nMurid mendengar dan menyebut bersama.",
+    "aktiviti": "Aktiviti 1: Sebut dan Ikut\n1. Guru menunjukkan kad ba, bi, bu.\n2. Guru menyebut satu persatu.\n3. Murid mengikut sebutan.\n\nAktiviti 2: Pilih Bunyi\n1. Guru menyebut 'ba', 'bi' atau 'bu'.\n2. Murid menunjukkan kad yang betul.\n\nAktiviti 3: Gerak Bunyi\n1. Guru menyebut suku kata.\n2. Murid melakukan pergerakan berdiri untuk bunyi ba, duduk untuk bunyi bi, membongkok untuk bu. \n\nAktiviti 4: Penutup\n1. Guru mengulang sebutan ba, bi, bu.\n2. Murid menyebut secara berkumpulan.\n3. Guru menyoal murid secara rawak.\n4. Guru memberi pujian dan galakan.",
+    "weekPickerIdx": 8
+  },
+  "skList": "BM 2.2 Mengenal dan membunyikan suku kata",
+  "spList": "BM 2.2.1 Membunyikan suku kata KV",
+  "pilihanState": {
+    "akt-pak": [
+      "Pembentangan Hasil Sendiri"
+    ],
+    "pak21": [
+      "Berasaskan murid",
+      "Berasaskan Kinestetik"
+    ],
+    "pak": [],
+    "emk": [
+      "Bahasa"
+    ],
+    "kbat": [
+      "Mengingati"
+    ],
+    "penilaian": [
+      "Pemerhatian / lisan / soal jawab",
+      "Pembentangan",
+      "Soal Jawab"
+    ],
+    "pnp": [],
+    "bbm": [
+      "Kad imbas"
+    ],
+    "nilai": [
+      "Keceriaan",
+      "Keyakinan diri",
+      "Fokus"
+    ]
+  },
+  "pilihanCustom": {
+    "akt-pak": "",
+    "pak21": "",
+    "pak": "",
+    "emk": "Kreativiti & Inovasi",
+    "kbat": "",
+    "penilaian": "",
+    "pnp": "",
+    "bbm": "",
+    "nilai": ""
+  }
+}
