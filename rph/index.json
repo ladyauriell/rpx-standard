@@ -1,0 +1,103 @@
+{
+  "rph": [
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 1,
+      "kelas": 1,
+      "topic": "Abjad A hingga E",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu1-kelas1a-e.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 1,
+      "kelas": 2,
+      "topic": "Abjad F hingga J",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu1-kelas2-f-j.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 2,
+      "kelas": 1,
+      "topic": "Minggu 2 Kelas 1",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu2-kelas1.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 2,
+      "kelas": 2,
+      "topic": "Minggu 2 Kelas 2",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu2-kelas2.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 3,
+      "kelas": 1,
+      "topic": "Minggu 3 Kelas 1",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu3-kelas1.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 3,
+      "kelas": 2,
+      "topic": "Minggu 3 Kelas 2",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu3-kelas2.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 4,
+      "kelas": 1,
+      "topic": "Minggu 4 Kelas 1",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu4-kelas1.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 4,
+      "kelas": 2,
+      "topic": "Minggu 4 Kelas 2",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu4-kelas2.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 5,
+      "kelas": 1,
+      "topic": "Vokal - Ba Bi Bu",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu5-kelas1-vokal-babibu.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 5,
+      "kelas": 2,
+      "topic": "Suku Kata - Ca Ci Cu",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu5-kelas2-cacicu.json"
+    },
+    {
+      "fasa": 2,
+      "age": 5,
+      "subject": "bm",
+      "week": 9,
+      "kelas": 1,
+      "topic": "Minggu 9 Kelas 1",
+      "url": "https://raw.githubusercontent.com/ladyauriell/rpx-standard/main/rph/fasa2/age5/bm/fasa2-bahasamelayu-5tahun-minggu9-kelas1.json"
+    }
+  ]
+}
