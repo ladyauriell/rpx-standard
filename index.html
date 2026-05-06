@@ -7431,20 +7431,21 @@ function initAutoSave() {
 
 // ── INIT ──────────────────────────────────────────────────
 <!-- @@start JPPMPAPRPXY@@ -->
-// ── BUYER KEY SYSTEM ──────────────────────────────────────
-// To add a new buyer:
-//   1. Generate a random 8-char key (e.g. X7mK9pQw)
-//   2. Encode nick and fullname with btoa() — e.g. btoa('Dila') = 'RGlsYQ=='
-//   3. Add one line to BUYERS below
-//   4. Push to GitHub → Vercel auto-deploys
+//
 const BUYERS = {
-  'xFakf5da': { nick: atob('UmFmaQ=='), fullname: atob('SGF5YXR1bCBSYWZp') },
-  'QWzNEWXZ': { nick: atob('VGFmZmE='), fullname: atob('VGFmZmF6YW5pIFR1cmF5dQ==') },
+	 // Add more buyers here:
+  // 'XXXXXXXX': { nick: atob('...'), fullname: atob('...') },
+// @@BUYERS_START@@
+ 'NxtRPhK8': { nick: atob('VGVzdA=='), fullname: atob('TmFtYSBHdXJ1') },
   'znpc3vhJ': { nick: atob('RGlsYQ=='), fullname: atob('RmFkaWxhaCBSdXNkaWFuc2hhaA==') },
+  'QWzNEWXZ': { nick: atob('VGFmZmE='), fullname: atob('VGFmZmF6YW5pIFR1cmF5dQ==') },
+  'xFakf5da': { nick: atob('UmFmaQ=='), fullname: atob('SGF5YXR1bCBSYWZp') },
+  'PqGrJDMN': { nick: atob('QXpsaW4='), fullname: atob('QXpsaW5hIEFobWFk') },
+  'qVV2vbGJ': { nick: atob('VGVoYQ=='), fullname: atob('RmF0dGVoYSBIYXJsaW5haCBIYXJ1bg==') },
+  'qqHpR7ZX': { nick: atob('QXR1bA=='), fullname: atob('TnVyaXpyYWh0dWxsIExlbQ==') },
   'QEQNu9TS': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgSXpuaSBTb2xlaGFoIFNhcGxp') },
   'ddAaXwyU': { nick: atob('Tm9vcg=='), fullname: atob('Tm9vciBLaGFzbWlyYSBTYWxpbWlu') },
   'JJVCcsBF': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgU2l0aSBBbmlyYWggSHVqZWU=') },
-  'qVV2vbGJ': { nick: atob('VGVoYQ=='), fullname: atob('RmF0dGVoYSBIYXJsaW5haCBIYXJ1bg==') },
   'NzmTdffS': { nick: atob('TWFyaWE='), fullname: atob('TWFyaWFuYWggTWFzYWhhdA==') },
   'uzYKqSJB': { nick: atob('TWFpemE='), fullname: atob('TWFpemF0dWwgRmFybmVpemEgQXdhbmc=') },
   'XvbcHv6E': { nick: atob('UmFobQ=='), fullname: atob('UmFobWF0ZGlsbGFoIFJhbWFu') },
@@ -7455,13 +7456,11 @@ const BUYERS = {
   'ATnFRwSt': { nick: atob('TnVy'), fullname: atob('TnVyc3lhbXNpZHJhdHVsIFNha3VyYSBCYWthcg==') },
   'aw65vpfY': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBadWJhaWRhaCBLYWRpcg==') },
   'GejPHp3d': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBJc3RpcGFuYSBOb2x0YW0=') },
-  'PqGrJDMN': { nick: atob('QXpsaW4='), fullname: atob('QXpsaW5hIEFobWFk') },
   'WPK3fpM6': { nick: atob('SGF6YQ=='), fullname: atob('SGF6YXdhbmkgTGl5YW5hIEppcG5laA==') },
   'pZvHqLvV': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBOdXJiYWl6dXJhIEp1bGlrYQ==') },
   'DKWbx9Us': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgSGlkYXJ5YW5pIERhcnNhbg==') },
   'Z6gJv4tH': { nick: atob('QW5pcw=='), fullname: atob('QW5pc2FoIFN1bGFpbWFu') },
   'FUzGyQYR': { nick: atob('SGFtaQ=='), fullname: atob('SGFtaWRhdHVsIExpeWFuYSBNYXpsYW5p') },
-  'qqHpR7ZX': { nick: atob('QXR1bA=='), fullname: atob('TnVyaXpyYWh0dWxsIExlbQ==') },
   'Snma7CX5': { nick: atob('TW9oZA=='), fullname: atob('TW9oZCBadWhyaSBKdXJp') },
   'V9nsEQUZ': { nick: atob('U29sZQ=='), fullname: atob('U29sZWhhIE1hamVsaXRh') },
   'GD3kpRhe': { nick: atob('TnVy'), fullname: atob('TnVyIEhhemlxYWggQWJkdWwgTGF0aWY=') },
@@ -7487,9 +7486,9 @@ const BUYERS = {
   'jac2jsbX': { nick: atob('RmFoaXo='), fullname: atob('TXVoYW1tYWQgRmFoaXogRGFtaXQ=') },
   'rzVHVgvP': { nick: atob('TnVy'), fullname: atob('TnVyIEl6emF0aSBBbWlyYSBIYXNhbiBFaGFi') },
   'XVrQbkHt': { nick: atob('SnVyaGE='), fullname: atob('SnVyaGFubmlt') },
-  'b': { nick: atob('dGVzdA=='), fullname: atob('dGVzdA==') },
-  // Add more buyers here:
-  // 'XXXXXXXX': { nick: atob('...'), fullname: atob('...') },
+
+// @@BUYERS_END@@
+ 
 };
 
 (function() {
