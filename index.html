@@ -5037,6 +5037,20 @@ SA 3.4 Membuat inferens`,
 // ── STATE ─────────────────────────────────────────────────
 let skList = '';
 let spList = '';
+let rphOriginalOwner = ''; // name of the teacher who FIRST created this RPH — persists across JSON import so the watermark can't be relabelled
+
+// The owner name is stored under a deliberately unrecognizable key, base64-encoded,
+// so a non-technical person skimming the .json file in Notepad has no obvious reason
+// to touch it. This is NOT real security (anyone who knows what base64 is can decode
+// it), it's just friction against casual/accidental deletion.
+const OWNER_FIELD_KEY = '_k7f9mZqXa';
+const OWNER_FIELD_KEY_OLD = '_k7f'; // previous short version, kept for backward-compat with files already exported during testing
+function encodeOwnerName(str) {
+  try { return btoa(unescape(encodeURIComponent(str || ''))); } catch (e) { return ''; }
+}
+function decodeOwnerName(str) {
+  try { return decodeURIComponent(escape(atob(str || ''))); } catch (e) { return ''; }
+}
 let temaData = [];
 let rptData = [...EMBEDDED_RPT]; // pre-loaded from embedded data
 let jadualData = {}; // { 'Isnin': [{masa:'8:00-9:00', subject:'Bahasa Malaysia'}, ...], ... }
@@ -5135,6 +5149,7 @@ function saveState() {
       settings,
       skList,
       spList,
+      rphOriginalOwner,
       temaData,
       // rptData not saved — always loaded from EMBEDDED_RPT
       jadualData,
@@ -5174,6 +5189,7 @@ function loadState() {
     }
     if (state.skList !== undefined) { skList = typeof state.skList === 'string' ? state.skList : (Array.isArray(state.skList) ? state.skList.map(i => i.text).join('\n') : ''); renderSkSpList(); }
     if (state.spList !== undefined) { spList = typeof state.spList === 'string' ? state.spList : (Array.isArray(state.spList) ? state.spList.map(i => i.text).join('\n') : ''); renderSkSpList(); }
+    if (state.rphOriginalOwner !== undefined) rphOriginalOwner = state.rphOriginalOwner;
     if (state.temaData) {
       temaData = state.temaData.map(item => ({
         ...item,
@@ -5305,6 +5321,9 @@ function saveSettings() {
 function padamKandungan() {
   if (!confirm('Padam semua kandungan RPH? (Logo, jadual, senarai kelas dan tema dalam Tetapan tidak akan terpadam)')) return;
 
+  // This is now a fresh RPH belonging to the current buyer — clear any imported ownership
+  rphOriginalOwner = '';
+
   // Clear RPH input fields (tarikh, minggu, tema preserved)
   ['inp-masa','inp-matapelajaran',
    'inp-hadir','inp-jumlah','inp-fokus','inp-objektif','inp-set-induksi','inp-aktiviti'].forEach(id => {
@@ -5369,7 +5388,7 @@ function padamKandungan() {
 function saveRphJson() {
   const payload = {
     _version: 1,
-    _owner: window.RPX_BUYER_FULLNAME || '',
+    [OWNER_FIELD_KEY]: encodeOwnerName(rphOriginalOwner || window.RPX_BUYER_FULLNAME || ''),
     formValues: getFormValues(),
     skList,
     spList,
@@ -5394,6 +5413,18 @@ function loadRphJson(input) {
   reader.onload = e => {
     try {
       const data = JSON.parse(e.target.result);
+
+      // Carry over the original creator's name so the watermark stays correct
+      // even though this file is now being opened in a different buyer's copy.
+      if (data[OWNER_FIELD_KEY] !== undefined) {
+        rphOriginalOwner = decodeOwnerName(data[OWNER_FIELD_KEY]);
+      } else if (data[OWNER_FIELD_KEY_OLD] !== undefined) {
+        rphOriginalOwner = decodeOwnerName(data[OWNER_FIELD_KEY_OLD]); // files exported with the short test key
+      } else if (data._owner !== undefined) {
+        rphOriginalOwner = data._owner || ''; // backward-compat with files saved before obfuscation
+      } else {
+        rphOriginalOwner = '';
+      }
 
       // Populate form fields
       if (data.formValues) setFormValues(data.formValues);
@@ -7111,12 +7142,13 @@ function drawStaticLabels() {
   dc.textAlign = 'left';
 
   // ── Buyer name watermark — subtle, light grey ────────────
-  if (window.RPX_BUYER_FULLNAME) {
+  const watermarkName = rphOriginalOwner || window.RPX_BUYER_FULLNAME;
+  if (watermarkName) {
     dc.save();
     dc.font = '22px ' + FONT_FAMILY;
     dc.fillStyle = 'rgba(69,69,69,1)';
     dc.textAlign = 'left';
-    dc.fillText('Dibuat oleh ' + window.RPX_BUYER_FULLNAME, 1997, 174);
+    dc.fillText('Dibuat oleh ' + watermarkName, 1997, 174);
     dc.restore();
   }
 
@@ -7444,6 +7476,8 @@ const BUYERS = {
   'qVV2vbGJ': { nick: atob('VGVoYQ=='), fullname: atob('RmF0dGVoYSBIYXJsaW5haCBIYXJ1bg==') },
   'WPK3fpM6': { nick: atob('V2FuaQ=='), fullname: atob('SGF6YXdhbmkgTGl5YW5hIEppcG5laA==') },
   'pZvHqLvV': { nick: atob('WnVyYQ=='), fullname: atob('U2l0aSBOdXJiYWl6dXJhaCBKdWxpdGE=') },
+
+
   'qqHpR7ZX': { nick: atob('QXR1bA=='), fullname: atob('TnVyaXpyYWh0dWxsIExlbQ==') },
   'QEQNu9TS': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgSXpuaSBTb2xlaGFoIFNhcGxp') },
   'ddAaXwyU': { nick: atob('Tm9vcg=='), fullname: atob('Tm9vciBLaGFzbWlyYSBTYWxpbWlu') },
@@ -7459,7 +7493,7 @@ const BUYERS = {
   'aw65vpfY': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBadWJhaWRhaCBLYWRpcg==') },
   'GejPHp3d': { nick: atob('U2l0aQ=='), fullname: atob('U2l0aSBJc3RpcGFuYSBOb2x0YW0=') },
  
-
+ 
   'DKWbx9Us': { nick: atob('TnVydWw='), fullname: atob('TnVydWwgSGlkYXJ5YW5pIERhcnNhbg==') },
   'Z6gJv4tH': { nick: atob('QW5pcw=='), fullname: atob('QW5pc2FoIFN1bGFpbWFu') },
   'FUzGyQYR': { nick: atob('SGFtaQ=='), fullname: atob('SGFtaWRhdHVsIExpeWFuYSBNYXpsYW5p') },
