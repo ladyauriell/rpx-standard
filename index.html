@@ -6414,7 +6414,7 @@ function generateRPH() {
   drawText(val('inp-minggu'),    FIELDS.minggu.x, FIELDS.minggu.y, FONT_HD);
   drawText(val('inp-hari'),      FIELDS.hari.x,   FIELDS.hari.y,   FONT_HD);
   const tarikRaw = val('inp-tarikh');
-  const bulanSingkat = ['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogs','Sep','Okt','Nov','Dis'];
+  const bulanSingkat = ['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogos','Sep','Okt','Nov','Dis'];
   let tarikFormatted = tarikRaw;
   if (tarikRaw) {
     const td = new Date(tarikRaw + 'T00:00:00');
