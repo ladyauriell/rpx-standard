@@ -598,6 +598,12 @@ body { font-family: var(--font); background: #fff; min-height: 100vh; color: var
     flex: 0 0 60px; font-size: 11px;
   }
 }
+
+/* Consistent vertical spacing: Tarikh+Hari row, Tema, Tema (edit), Minggu */
+.field-block-row { margin-bottom: 8px; }
+@media (max-width: 480px) {
+  .field-block-row { margin-bottom: 8px; }
+}
 .form-row-2 .form-row { flex: 1; }
 
 /* Upload button */
@@ -1380,7 +1386,7 @@ input.pilihan-custom-input {
 
       <!-- Day tabs box -->
       <div style="background: var(--background-container);border:1.5px solid rgba(26,95,173,0.2);border-radius:14px;padding:14px 16px;margin-bottom:10px;">
-        <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
+        <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap" class="field-block-row">
           <!-- Left: title + day tabs -->
           <div style="flex:0 0 auto">
             <div class="section-title" style="margin-top:0;margin-bottom:8px">Jadual</div>
@@ -1417,11 +1423,11 @@ input.pilihan-custom-input {
           </div>
         </div>
         <!-- Subject info bar -->
-        <div id="subject-info-bar" style="margin-top:10px">
+        <div id="subject-info-bar" class="field-block-row" style="margin-top:0">
           <strong id="subject-info-name">—</strong>
         </div>
         <!-- Tema + stepper -->
-        <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
+        <div class="info-row field-block-row" style="display:flex;align-items:center;gap:10px;min-width:0">
           <label class="row-label">Tema</label>
           <div style="flex:1;min-width:0" id="tema-minggu-row">
             <div id="week-stepper" style="width:100%">
@@ -1434,7 +1440,7 @@ input.pilihan-custom-input {
         </div>
 
         <!-- Tema edit -->
-        <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
+        <div class="info-row field-block-row" style="display:flex;align-items:center;gap:10px;min-width:0">
           <label class="row-label">Tema (edit)</label>
           <input type="text" id="inp-tema" placeholder="Tema minggu ini" style="flex:1;min-width:0" />
         </div>
@@ -1442,7 +1448,7 @@ input.pilihan-custom-input {
         <!-- Minggu -->
         <div class="info-row" style="display:flex;align-items:center;gap:10px;min-width:0">
           <label class="row-label">Minggu</label>
-          <input type="number" id="inp-minggu" min="1" max="52" placeholder="—" style="flex:0 0 calc((100% - 70px) / 7);min-width:0" />
+          <input type="number" id="inp-minggu" min="1" max="52" placeholder="—" style="flex:0 0 60px;min-width:0" />
         </div>
 
       </div>
@@ -2325,15 +2331,15 @@ input.pilihan-custom-input {
      
 
       <!-- Pricing block 
-      <div style="border:1px solid rgba(0,53,128,0.15);border-radius:14px;margin-bottom:16px;width:100%;text-align:center">
-        <!-- Top: title + price 
-        <div style="background:rgba(0,53,128,0.08);padding:16px 16px 14px;border-radius:13px 13px 0 0">
+      <div style="border:1px solid rgba(0,53,128,0.15);border-radius:14px;margin-bottom:16px;width:100%;text-align:center"> -->
+        <!-- Top: title + price -->
+        <!-- <div style="background:rgba(0,53,128,0.08);padding:16px 16px 14px;border-radius:13px 13px 0 0">
           <div style="font-size:25px;font-weight:800;color:#003580;line-height:1">Pelan Pro</div>
           <div style="font-size:48px;font-weight:800;color:#003580;line-height:1">Akan Datang</div>
         </div>
-        <hr style="border:none;border-top:1px solid rgba(0,42,112,0.2);margin:0">
-        <!-- Bottom: features 
-        <div style="background:#f7f9fc;padding:14px 16px 16px;border-radius:0 0 13px 13px">
+        <hr style="border:none;border-top:1px solid rgba(0,42,112,0.2);margin:0"> -->
+        <!-- Bottom: features -->
+        <!-- <div style="background:#f7f9fc;padding:14px 16px 16px;border-radius:0 0 13px 13px">
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-top:4px;margin-bottom:4px">Apa yang anda dapat</div>
           <div style="display:flex;flex-direction:column;gap:8px">
 
@@ -2359,7 +2365,7 @@ input.pilihan-custom-input {
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Tajuk</strong></div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Objektif</strong></div>
 <div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Induksi</strong></div>
-<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Aktiviti</strong></div>
+<div style="font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;gap:8px"><span style="color:#003580">✓</span> Cadangan <strong>Aktiviti</strong></div> -->
             <!-- Hidden items kept in DOM -->
             <div style="display:none"><span>✓</span> Tanpa daftar akaun</div>
             <div style="display:none"><span>✓</span> Tanpa login</div>
@@ -3793,7 +3799,7 @@ MA 6.1 Mengetahui kedudukan objek dalam ruang`,
   {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 3',bulan:'JULAI – SEPT',
 	sk:`PA 1.4 Memahami Rukun Iman`,
 		sp:`PA 1.4.1 Menyebut Rukun Iman : Beriman kepada Allah Beriman kepada Malaikat Beriman kepada Kitab Beriman kepada Rasul Beriman kepada Hari Kiamat Beriman kepada Qada’ dan Qadar`},
-  {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 4',bulan:'OKT - NOV',
+  {age:'5',subject:'Pendidikan Agama Islam - Akidah',fasa:'FASA 4',bulan:'OGOS - NOV',
 	sk:`PA 1.5 Memahami Rukun Islam`,
 		sp:`PA 1.5.1 Menyebut Rukun Islam : Mengucap dua kalimah syahadah Menunaikan solat lima waktu Berpuasa di bulan Ramadan Mengeluarkan zakat Menunaikan haji`},
 
@@ -3813,10 +3819,10 @@ MA 6.1 Mengetahui kedudukan objek dalam ruang`,
   {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 3',bulan:'JULAI – SEPT',
 	sk:`PI 2.5 Memperoleh pengetahuan asas tentang Qada’ Hajat`,
 		sp:`PI 2.5.2 Mengetahui adab ketika Qada’ Hajat`},
-  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OKT - NOV',
+  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OGOS - NOV',
 	sk:`PI 2.6 Ibadah puasa`,
 		sp:`PI 2.6.1 Menyatakan maksud puasa`},
-  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OKT - NOV',
+  {age:'5',subject:'Pendidikan Agama Islam - Ibadah',fasa:'FASA 4',bulan:'OGOS - NOV',
 	sk:`PI 2.6 Ibadah puasa`,
 		sp:`PI 2.6.2 Memerihalkan tentang ibadah berpuasa : Bulan Ramadan Sahur Berbuka`},
 
@@ -3838,7 +3844,7 @@ MA 6.1 Mengetahui kedudukan objek dalam ruang`,
 	sk:`PAK 3.3 Mengamalkan adab makan dan minum dalan Islam`,
 		sp:`PAK 3.3.2 Mengetahui adab Ketika makan dan minum`},
 
-  {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 4',bulan:'OKT - NOV',
+  {age:'5',subject:'Pendidikan Agama Islam - Akhlak',fasa:'FASA 4',bulan:'OGOS - NOV',
 	sk:`PAK 3.4 Mengamalkan adab kebersihan dalam kehidupan`,
 		sp:`PAK 3.4.1 Mengetahui adab menjaga kebersihan diri Menjaga kebersihan anggota badan Menjaga kebersihan pakaian Menjaga kebersihan rumah Menjaga kebersihan sekolah`},
 
@@ -3852,7 +3858,7 @@ MA 6.1 Mengetahui kedudukan objek dalam ruang`,
   {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 3',bulan:'JULAI – SEPT',
 	sk:`PS 4.3 Mengamalkan akhlak dan sifat Nabi Muhammad SAW`,
 		sp:`PS 4.3.1 Menyebut akhlak Nabi Muhammad SAW Rajin Sabar Penyayang`},
-  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 4',bulan:'OKT - NOV',
+  {age:'5',subject:'Pendidikan Agama Islam - Sirah',fasa:'FASA 4',bulan:'OGOS - NOV',
 	sk:`PS 4.3 Mengamalkan akhlak dan sifat Nabi Muhammad SAW`,
 		sp:`PS 4.3.1 Menyebut akhlak Nabi Muhammad SAW Rajin Sabar Penyayang`},
 
